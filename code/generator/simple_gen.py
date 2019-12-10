@@ -3,27 +3,28 @@ from typing import List
 
 # def fib(n: int) -> List[int]:
 #     numbers = []
-#     current, nxt = 0, 1
+#     t1, t2 = 0, 1
 #     while len(numbers) < n:
-#         current, nxt = nxt, current + nxt
-#         numbers.append(current)
+#         t1, t2 = t2, t1 + t2
+#         numbers.append(t1)
 #
 #     return numbers
 
 
 def fib():
-    current, nxt = 0, 1
+    t1, t2 = 0, 1
     while True:
-        current, nxt = nxt, current + nxt
-        yield current
+        t1, t2 = t2, t1 + t2
+        yield t1
 
 
 result = fib()
 
 for n in result:
-    print(n, end=', ')
     if n > 10000:
+        print(n)
         break
+    else:
+        print(n, end=', ')
 
-print()
 print("Done")
